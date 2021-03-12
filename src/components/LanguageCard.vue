@@ -1,7 +1,7 @@
 <template>
   <div class="language-box-wrapper">
     <h3>{{ name }}</h3>
-      <img :src="require(`@/assets/images/${image_src}`)" alt="alt" width="360px" height="200px"/>
+      <img :src="require(`@/assets/images/${image_src}`)" alt="alt" width="300px" height="200px" />
     <div class="detail-wrapper">
       <p>学習期間： {{ period }}カ月間</p>
       <p>{{detail}}</p>
@@ -28,7 +28,7 @@
         required: true,
       },
       period: {
-        type: Number,
+        type: String,
         required: true,
       },
       detail: {
@@ -42,14 +42,8 @@
 
 <style scoped>
 .language-box-wrapper {
-  width: 360px;
-  height: 420px;
-  border: 1px solid #666666;
-  margin: 20px;
-}
-
-.icon-wrapper {
-  width: 280px;
+  width: 320px;
+  height: 400px;
   border: 1px solid #666666;
   margin: 20px;
 }

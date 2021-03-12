@@ -1,9 +1,9 @@
 <template>
   
   <div>
-    <h2>Languages</h2>
+    <h2>学習した知識</h2>
     <div class="languages-list">
-      <LanguageBox 
+      <LanguageCard 
       name='HTML&CSS'
       image_src='htmlcss.jpg'
       alt='htmlcss'
@@ -11,22 +11,22 @@
       detail='フロントエンド言語の基礎として学習。
       Viewファイルの基礎に加え、レスポンシブWebデザインなどの概念を習得しました。'
       />
-      <LanguageBox 
+      <LanguageCard 
       name='JavaScript'
       image_src='javascript.png'
       alt='javascript'
       period=3
       detail='よりUIの高いWebアプリケーションを開発するために学習。
-      非同期通信、非同期通信、Ajaxの概念を習得しました'
+      非同期通信、json形式の概念などを習得しました'
       />
-      <LanguageBox 
+      <LanguageCard 
       name='Vue.js'
       image_src='vue.jpeg'
       alt='vue.js'
       period=1
       detail='自作アプリを作成するにあたり、SPAのWebサイトを実装できるようになりたいという思いで学習。当ポートフォリオサイトはVue.jsを使用しておりSPA仕様となっております。'
       />
-      <LanguageBox 
+      <LanguageCard 
       name='Ruby'
       image_src='ruby.png'
       alt='ruby'
@@ -36,32 +36,32 @@
       </div>
     <h2>Other</h2>
       <div class="languages-list">
-      <LanguageBox 
+      <LanguageCard 
       name='RubyonRails'
       image_src='rubyonrails.png'
       alt='rubyonrails'
       period=4
       />
-      <LanguageBox 
+      <LanguageCard 
       name='MySQL'
       image_src='mysql.png'
       alt='mysql'
       period=4
       />
-      <LanguageBox 
+      <LanguageCard 
       name='GitHub'
       image_src='github.png'
       alt='github'
       period=4
       />
-      <LanguageBox 
+      <LanguageCard 
       name='AWS'
       image_src='aws.jpg'
       alt='rubyonrails'
       period=2
       detail='AWS EC2によるデプロイ、AWS S3のストレージ利用について学習しました'
       />
-      <LanguageBox 
+      <LanguageCard 
       name='Docker'
       image_src='docker.jpg'
       alt='docker'
@@ -73,12 +73,11 @@
 </template>
 
 <script>
-import LanguageBox from './LanguageBox';
+import LanguageCard from './LanguageCard';
 export default {
   components: {
-     LanguageBox 
-     },
-
+     LanguageCard 
+     }
 }
 </script>
 

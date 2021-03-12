@@ -15,7 +15,7 @@
       </div>
     </transition>
     <div class="title-wrapper">
-      <div v-bind:class="{selected: isActive}" @click="openDrawerMenu" @mouseover="mouseOverAction" @mouseleave="mouseLeaveAction" >
+      <div v-bind:class="{selected: isActive}" @click="openDrawerMenu" v-click-outside="hide" @mouseover="mouseOverAction" @mouseleave="mouseLeaveAction" >
       <img :src="require(`@/assets/images/list.png`)" alt="alt" width="50px" height="50px" />
       </div>
       <h2><router-link to="/">My Portfolio</router-link></h2>
@@ -30,6 +30,7 @@
   
 <script>
 import 'normalize.css'
+import ClickOutside from 'vue-click-outside'
 export default {
   name: "App",
   data() {
@@ -40,7 +41,10 @@ export default {
   },
   methods: {
     openDrawerMenu(){
-      this.drawerFlg = !this.drawerFlg
+      this.drawerFlg = true
+    },
+    hide () {
+      this.drawerFlg = false
     },
     mouseOverAction (){
       this.isActive = true;
@@ -48,6 +52,9 @@ export default {
     mouseLeaveAction(){
       this.isActive = false;
     }
+  },
+  directives: {
+    ClickOutside
   }
 }
 </script>
@@ -71,7 +78,7 @@ header {
 .title-wrapper {
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
 }
 
 h2 {
@@ -79,7 +86,7 @@ h2 {
 }
 
 img {
-  margin: 40px;
+  margin: 30px;
 }
 
 a {
@@ -111,6 +118,9 @@ a {
   height: 100vh;
   background-color: white;
   justify-content: center;
+}
+li {
+  margin-top: 12px;
 }
 .drawer-menu {
   text-align: left;
